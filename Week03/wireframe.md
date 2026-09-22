@@ -1,5 +1,11 @@
 # Brownie Recipe Page Wireframe
 
+![Brownie recipe page wireframe](wireframe.jpg)
+
+This visual wireframe is an original layout based on the Food52 site-map
+research. It is a plan for my own brownie recipe page, not a screenshot or
+copy of the Food52 website.
+
 ```text
 +--------------------------------------------------+
 | header: site name | Recipes | About | Contact   |
