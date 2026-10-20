@@ -54,9 +54,13 @@
           </div>
 
           <div class="route-view" aria-live="polite">
-            <div class="route-image-wrap">
-              <img id="route-image" src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs">
-              <span class="route-image-label">Frame <span id="route-number">01</span> / 03</span>
+            <!-- Ambient light: a blurred copy of the photo sits behind it and spills past its edges. -->
+            <div class="glow route-glow">
+              <img class="glow-light" id="route-glow" src="img/new-york.jpg" alt="" aria-hidden="true">
+              <div class="route-image-wrap">
+                <img id="route-image" src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs">
+                <span class="route-image-label">Frame <span id="route-number">01</span> / 03</span>
+              </div>
             </div>
             <div class="route-copy">
               <p id="route-place" class="kicker">Times Square / New York</p>
@@ -82,23 +86,23 @@
           </div>
           <div class="photo-grid">
             <figure class="archive-card">
-              <img src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/new-york.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs" loading="lazy"></div>
               <figcaption><span>Street / Times Square</span><strong>The center keeps moving</strong><small>Aaron Sebastian / Unsplash</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/nyc-diner.jpg" width="1280" height="720" alt="The neon front of Brooklyn Diner on a city street at dusk" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/nyc-diner.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-diner.jpg" width="1280" height="720" alt="The neon front of Brooklyn Diner on a city street at dusk" loading="lazy"></div>
               <figcaption><span>Storefront / Brooklyn Diner</span><strong>A corner that stays</strong><small>Frank Schulenburg / CC BY-SA 4.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/nyc-park.jpg" width="1280" height="894" alt="A large tree beside a path and a stone bridge in Central Park" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/nyc-park.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-park.jpg" width="1280" height="894" alt="A large tree beside a path and a stone bridge in Central Park" loading="lazy"></div>
               <figcaption><span>Green space / Central Park</span><strong>Room inside the city</strong><small>Jet Lowe / Public domain</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/nyc-ferry.jpg" width="1068" height="1600" alt="A crowd waiting along a waterfront railing, with the Statue of Liberty in the distance" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/nyc-ferry.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-ferry.jpg" width="1068" height="1600" alt="A crowd waiting along a waterfront railing, with the Statue of Liberty in the distance" loading="lazy"></div>
               <figcaption><span>People / Liberty Island</span><strong>Waiting for the water</strong><small>Jakub Hałun / CC BY 4.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/nyc-brooklyn-bridge.jpg" width="1600" height="931" alt="The cables of the Brooklyn Bridge framing the Manhattan skyline at sunset" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/nyc-brooklyn-bridge.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-brooklyn-bridge.jpg" width="1600" height="931" alt="The cables of the Brooklyn Bridge framing the Manhattan skyline at sunset" loading="lazy"></div>
               <figcaption><span>Structure / Brooklyn Bridge</span><strong>A city held in lines</strong><small>Unsplash</small></figcaption>
             </figure>
           </div>
@@ -106,15 +110,15 @@
             <summary><span class="more-closed">Show 3 more frames from New York</span><span class="more-open">Hide the extra frames</span></summary>
             <div class="more-grid">
               <figure class="archive-card">
-                <img src="img/nyc-street.jpg" width="1280" height="853" alt="A bronze statue of a rider on a rearing horse among bare trees, in front of a tall apartment building" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/nyc-street.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-street.jpg" width="1280" height="853" alt="A bronze statue of a rider on a rearing horse among bare trees, in front of a tall apartment building" loading="lazy"></div>
                 <figcaption><span>Monument / New York</span><strong>A rider among the windows</strong><small>Mike Peel / CC BY-SA 4.0</small></figcaption>
               </figure>
               <figure class="archive-card">
-                <img src="img/nyc-midtown-skyline.jpg" width="1600" height="1067" alt="Looking down over Midtown Manhattan toward the Empire State Building and the harbor" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/nyc-midtown-skyline.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-midtown-skyline.jpg" width="1600" height="1067" alt="Looking down over Midtown Manhattan toward the Empire State Building and the harbor" loading="lazy"></div>
                 <figcaption><span>Skyline / Midtown</span><strong>The long view</strong><small>Unsplash</small></figcaption>
               </figure>
               <figure class="archive-card">
-                <img src="img/nyc-empire-evening.jpg" width="1600" height="1067" alt="The Empire State Building above dense Manhattan rooftops under an orange evening sky" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/nyc-empire-evening.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/nyc-empire-evening.jpg" width="1600" height="1067" alt="The Empire State Building above dense Manhattan rooftops under an orange evening sky" loading="lazy"></div>
                 <figcaption><span>Skyline / Manhattan</span><strong>Windows after light</strong><small>Unsplash</small></figcaption>
               </figure>
             </div>
@@ -131,23 +135,23 @@
           </div>
           <div class="photo-grid">
             <figure class="archive-card">
-              <img src="img/tokyo.jpg" width="1600" height="900" alt="Two people walking away down a tree-lined Tokyo street" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/tokyo.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo.jpg" width="1600" height="900" alt="Two people walking away down a tree-lined Tokyo street" loading="lazy"></div>
               <figcaption><span>People / Marunouchi</span><strong>A slower way through</strong><small>James Pere / Unsplash</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/tokyo-cups.jpg" width="1280" height="1024" alt="Balconies shaped like a cream coffee cup and a red coffee cup on a Tokyo building" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/tokyo-cups.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-cups.jpg" width="1280" height="1024" alt="Balconies shaped like a cream coffee cup and a red coffee cup on a Tokyo building" loading="lazy"></div>
               <figcaption><span>Facade / Kappabashi</span><strong>A sign above the street</strong><small>Basile Morin / CC BY-SA 4.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/tokyo-mirrors.jpg" width="1280" height="960" alt="A street crowd reflected in the angled mirrors of a Harajuku entrance" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/tokyo-mirrors.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-mirrors.jpg" width="1280" height="960" alt="A street crowd reflected in the angled mirrors of a Harajuku entrance" loading="lazy"></div>
               <figcaption><span>People / Harajuku</span><strong>The crowd, doubled</strong><small>Basile Morin / CC BY-SA 4.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/tokyo-akihabara.jpg" width="1280" height="853" alt="Pedestrians walking down the middle of Akihabara's main street while it is closed to cars" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/tokyo-akihabara.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-akihabara.jpg" width="1280" height="853" alt="Pedestrians walking down the middle of Akihabara's main street while it is closed to cars" loading="lazy"></div>
               <figcaption><span>Street / Akihabara</span><strong>The road opens up</strong><small>Ximonic / CC BY-SA 4.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/tokyo-hiroo.jpg" width="1280" height="960" alt="A road-closed sign on a small shopping street in Hiroo, Tokyo" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/tokyo-hiroo.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-hiroo.jpg" width="1280" height="960" alt="A road-closed sign on a small shopping street in Hiroo, Tokyo" loading="lazy"></div>
               <figcaption><span>Street / Hiroo</span><strong>An afternoon for walkers</strong><small>Syced / CC0</small></figcaption>
             </figure>
           </div>
@@ -155,15 +159,15 @@
             <summary><span class="more-closed">Show 3 more frames from Tokyo</span><span class="more-open">Hide the extra frames</span></summary>
             <div class="more-grid">
               <figure class="archive-card">
-                <img src="img/tokyo-akihabara-neon.jpg" width="1600" height="1038" alt="Pedestrians crossing a wet street in Akihabara under bright neon signs and game arcades" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/tokyo-akihabara-neon.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-akihabara-neon.jpg" width="1600" height="1038" alt="Pedestrians crossing a wet street in Akihabara under bright neon signs and game arcades" loading="lazy"></div>
                 <figcaption><span>Street / Akihabara</span><strong>Signs make their own weather</strong><small>Unsplash</small></figcaption>
               </figure>
               <figure class="archive-card">
-                <img src="img/tokyo-curves.jpg" width="1254" height="1600" alt="Looking straight up between two curved white buildings striped with bands of windows" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/tokyo-curves.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-curves.jpg" width="1254" height="1600" alt="Looking straight up between two curved white buildings striped with bands of windows" loading="lazy"></div>
                 <figcaption><span>Looking up</span><strong>The scale changes overhead</strong><small>Unsplash</small></figcaption>
               </figure>
               <figure class="archive-card">
-                <img src="img/tokyo-tower-rain.jpg" width="1476" height="1600" alt="Tokyo Tower reflected in a wet street at dusk" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/tokyo-tower-rain.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/tokyo-tower-rain.jpg" width="1476" height="1600" alt="Tokyo Tower reflected in a wet street at dusk" loading="lazy"></div>
                 <figcaption><span>Street / Tokyo Tower</span><strong>Rain keeps the lights</strong><small>Unsplash</small></figcaption>
               </figure>
             </div>
@@ -179,23 +183,23 @@
           </div>
           <div class="photo-grid">
             <figure class="archive-card">
-              <img src="img/paris.jpg" width="1070" height="1600" alt="Cream stone apartment buildings above a corner cafe in Paris" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/paris.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris.jpg" width="1070" height="1600" alt="Cream stone apartment buildings above a corner cafe in Paris" loading="lazy"></div>
               <figcaption><span>Facade / Neighborhood street</span><strong>The room above the cafe</strong><small>T / Unsplash</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/paris-rue.jpg" width="1280" height="869" alt="A long, nearly empty Paris street lined with stone buildings and a crosswalk" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/paris-rue.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-rue.jpg" width="1280" height="869" alt="A long, nearly empty Paris street lined with stone buildings and a crosswalk" loading="lazy"></div>
               <figcaption><span>Street / Rue Réaumur</span><strong>Lines of the afternoon</strong><small>JLPC / CC BY-SA 3.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/paris-cafe-gare.jpg" width="1280" height="958" alt="The pale stone front of the Café de la Gare theatre in Paris" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/paris-cafe-gare.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-cafe-gare.jpg" width="1280" height="958" alt="The pale stone front of the Café de la Gare theatre in Paris" loading="lazy"></div>
               <figcaption><span>Storefront / Café de la Gare</span><strong>A place to stop</strong><small>Styx / CC BY-SA 3.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/paris-trocadero.jpg" width="1280" height="853" alt="Trees and parked cars in front of a corner apartment building near Trocadéro" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/paris-trocadero.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-trocadero.jpg" width="1280" height="853" alt="Trees and parked cars in front of a corner apartment building near Trocadéro" loading="lazy"></div>
               <figcaption><span>Street / Trocadéro</span><strong>Shade in front of the facade</strong><small>Lionel Allorge / CC BY-SA 3.0</small></figcaption>
             </figure>
             <figure class="archive-card">
-              <img src="img/paris-pont-alexandre.jpg" width="1600" height="1132" alt="Ornate lamps along the Pont Alexandre III above the Seine at dusk" loading="lazy">
+              <div class="glow"><img class="glow-light" src="img/paris-pont-alexandre.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-pont-alexandre.jpg" width="1600" height="1132" alt="Ornate lamps along the Pont Alexandre III above the Seine at dusk" loading="lazy"></div>
               <figcaption><span>Structure / Pont Alexandre III</span><strong>Lights along the water</strong><small>Unsplash</small></figcaption>
             </figure>
           </div>
@@ -203,15 +207,15 @@
             <summary><span class="more-closed">Show 3 more frames from Paris</span><span class="more-open">Hide the extra frames</span></summary>
             <div class="more-grid">
               <figure class="archive-card">
-                <img src="img/paris-eiffel-seine.jpg" width="1600" height="1064" alt="The Eiffel Tower above the Seine and its riverboats at dusk" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/paris-eiffel-seine.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-eiffel-seine.jpg" width="1600" height="1064" alt="The Eiffel Tower above the Seine and its riverboats at dusk" loading="lazy"></div>
                 <figcaption><span>River / Seine</span><strong>The river keeps the horizon</strong><small>Unsplash</small></figcaption>
               </figure>
               <figure class="archive-card">
-                <img src="img/paris-eiffel-above.jpg" width="1067" height="1600" alt="The Eiffel Tower under a blue sky, seen from above the autumn trees of Trocadéro" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/paris-eiffel-above.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-eiffel-above.jpg" width="1067" height="1600" alt="The Eiffel Tower under a blue sky, seen from above the autumn trees of Trocadéro" loading="lazy"></div>
                 <figcaption><span>View / Trocadéro</span><strong>Everyone's first photograph</strong><small>Unsplash</small></figcaption>
               </figure>
               <figure class="archive-card archive-card-panorama">
-                <img src="img/paris-notre-dame.jpg" width="1280" height="216" alt="The row of carved stone kings across the west front of Notre-Dame" loading="lazy">
+                <div class="glow"><img class="glow-light" src="img/paris-notre-dame.jpg" alt="" aria-hidden="true" loading="lazy"><img class="photo" src="img/paris-notre-dame.jpg" width="1280" height="216" alt="The row of carved stone kings across the west front of Notre-Dame" loading="lazy"></div>
                 <figcaption><span>Facade / Notre-Dame</span><strong>A row of kings above the doors</strong><small>Dietmar Rabich / CC BY-SA 4.0</small></figcaption>
               </figure>
             </div>

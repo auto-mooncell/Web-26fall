@@ -48,21 +48,25 @@ function buildThumbnails() {
     </button>`).join('');
 }
 
+const routeGlow = document.querySelector('.route-glow');      // wrapper around photo + light
+const routeGlowLight = document.querySelector('#route-glow'); // the blurred copy behind the photo
+
 function render() {
   const frame = routeData[activeCity][activeFrame];
-  routeImage.classList.add('is-changing');
+  routeGlow.classList.add('is-changing');
 
-  // Wait for the fade-out (see .is-changing in style.css), then swap the content.
+  // Wait for the fade-out (see .route-glow.is-changing in style.css), then swap the content.
   setTimeout(() => {
     routeImage.src = frame.src;
+    routeGlowLight.src = frame.src; // the ambient light always uses the same photo
     routeImage.alt = frame.alt;
     document.querySelector('#route-number').textContent = `0${activeFrame + 1}`;
     document.querySelector('#route-place').textContent = frame.place;
     document.querySelector('#route-frame-title').textContent = frame.title;
     document.querySelector('#route-description').textContent = frame.description;
     document.querySelector('#route-credit').textContent = frame.credit;
-    routeImage.classList.remove('is-changing');
-  }, 180);
+    routeGlow.classList.remove('is-changing');
+  }, 260);
 
   routeTrack.querySelectorAll('[data-route-frame]').forEach((button, index) => {
     button.classList.toggle('is-active', index === activeFrame);

@@ -42,6 +42,17 @@ h1 em, h2 em { color: var(--red); }
 .dark { color: var(--white); background: var(--night); }
 .dark .kicker, .dark h1 em, .dark h2 em, .dark cite { color: var(--red-light); }
 
+/* ---------- Ambient light ("ambilight") ----------
+   Inspired by bilibili-ambilight / youtube-ambilight, which paint a blurred,
+   enlarged copy of the video behind the player so its colours spill outward.
+   Here it is pure CSS: .glow-light is a second copy of the same photo,
+   placed behind it (z-index: -1), blurred, saturated and scaled up. */
+.glow { position: relative; isolation: isolate; }
+.glow-light { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; filter: blur(32px) saturate(1.8); transform: scale(1.04); opacity: 0; pointer-events: none; transition: opacity 500ms ease, transform 600ms ease; }
+.route-glow .glow-light, .lead-glow .glow-light, .showcase-glow .glow-light { filter: blur(64px) saturate(2) brightness(1.15); opacity: .95; animation: glow-breathe 7s ease-in-out infinite alternate; }
+/* The light slowly expands and settles: a still-photo version of light that follows a moving video. */
+@keyframes glow-breathe { from { transform: scale(1.04); } to { transform: scale(1.16); } }
+
 /* ---------- Links and buttons ---------- */
 .text-link { display: inline-flex; align-items: center; gap: .6rem; color: var(--red); font: 500 .8rem var(--mono); letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
 .text-link:hover { text-decoration: underline; text-underline-offset: .3rem; }
@@ -93,11 +104,14 @@ h1 em, h2 em { color: var(--red); }
 .city-card-copy strong { font: 500 clamp(2.2rem, 3.6vw, 3.2rem) var(--serif); line-height: 1.1; }
 .city-card-copy span { color: #f1e2db; font: .8rem var(--mono); }
 
-.archive-band .archive-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding-block: 7rem; }
-.archive-layout h2 { max-width: 13ch; margin-bottom: 0; }
-.archive-note { max-width: 34rem; align-self: end; color: var(--on-dark); }
-.archive-note p { margin-bottom: 2rem; font-size: 1.1rem; }
-.archive-note cite { font-family: var(--serif); }
+.archive-band { overflow: hidden; background: #111311; }
+.archive-band .archive-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 6rem; align-items: center; padding-block: 8rem; }
+.archive-copy h2 { max-width: 13ch; margin-bottom: 1.6rem; }
+.archive-copy p:not(.kicker) { max-width: 30rem; margin-bottom: 2rem; color: var(--on-dark); font-size: 1.1rem; }
+.archive-copy cite { font-family: var(--serif); }
+.archive-showcase { margin: 0; }
+.archive-showcase .photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.archive-showcase figcaption { margin-top: 1.2rem; color: #b8beb8; }
 
 .story-preview { display: grid; grid-template-columns: 1.15fr .85fr; gap: 5rem; align-items: center; padding-block: 7rem; }
 .story-preview figure { margin: 0; }
@@ -142,7 +156,9 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .city-jump a { padding: .55rem .95rem; border: 1px solid var(--ink); font: .8rem var(--mono); text-decoration: none; text-transform: uppercase; transition: background-color 180ms ease, color 180ms ease; }
 .city-jump a:hover { color: var(--white); background: var(--ink); }
 
-.route-section { padding-block: 7rem; background: var(--night-soft); }
+.route-section { overflow: hidden; padding-block: 7rem; background: #111311; }
+/* Keep the heading and city buttons above the light that spills up from the photo. */
+.route-heading, .route-city-buttons { position: relative; z-index: 1; }
 .route-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 2.4rem; }
 .route-heading h2 { margin-bottom: 0; }
 .route-heading > p { max-width: 30rem; margin: 0 0 .3rem; color: var(--on-dark); }
@@ -151,8 +167,10 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .route-city-button:hover, .route-city-button.is-active { color: var(--ink); background: var(--white); }
 .route-view { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .5fr); gap: 2.5rem; align-items: end; }
 .route-image-wrap { position: relative; overflow: hidden; background: #101310; }
-.route-image-wrap img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: opacity 220ms ease, transform 420ms ease; }
-.route-image-wrap img.is-changing { opacity: .2; transform: translateX(1rem); }
+.route-image-wrap img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: opacity 250ms ease, transform 450ms ease; }
+/* While a frame changes, the photo slides out and its light dims, then both return with the new frame. */
+.route-glow.is-changing #route-image { opacity: .15; transform: translateX(1.2rem); }
+.route-glow.is-changing .glow-light { opacity: .2; }
 .route-image-label { position: absolute; top: 1rem; left: 1rem; padding: .25rem .5rem; color: var(--white); background: rgb(0 0 0 / .55); font: .75rem var(--mono); letter-spacing: .08em; }
 .route-copy h3 { margin-bottom: 1rem; font-size: clamp(2rem, 3.4vw, 3rem); }
 .route-copy p { color: var(--on-dark); }
@@ -177,9 +195,11 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 /* One large frame on the left, four smaller frames in a 2 x 2 block on the right. */
 .photo-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem 1.25rem; }
 .archive-card { display: flex; flex-direction: column; margin: 0; }
-.archive-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ddd9d1; transition: transform 420ms ease; }
+.archive-card .photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ddd9d1; }
 .photo-grid > .archive-card:first-child { grid-row: span 2; }
-.photo-grid > .archive-card:first-child img { flex: 1 1 0; height: 0; min-height: 0; aspect-ratio: auto; } /* height follows the two rows of small cards, not the photo */
+/* height follows the two rows of small cards, not the photo */
+.photo-grid > .archive-card:first-child .glow { flex: 1 1 0; height: 0; min-height: 0; }
+.photo-grid > .archive-card:first-child .photo { height: 100%; aspect-ratio: auto; }
 .photo-grid > .archive-card:first-child figcaption strong { font-size: 1.7rem; }
 .archive-card figcaption { display: block; margin-top: .9rem; }
 .archive-card figcaption span, .archive-card figcaption strong, .archive-card figcaption small { display: block; }
@@ -205,7 +225,7 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .more-frames[open] .more-grid { animation: frames-in 360ms ease both; }
 @keyframes frames-in { from { opacity: 0; transform: translateY(.75rem); } to { opacity: 1; transform: none; } }
 .archive-card-panorama { grid-column: 1 / -1; }
-.archive-card-panorama img { aspect-ratio: auto; }
+.archive-card-panorama .photo { aspect-ratio: auto; }
 
 .credits-band { background: var(--sage); }
 .credits-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5rem; padding-block: 6rem; }
@@ -223,9 +243,9 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .story-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 11rem)); gap: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .story-meta span { display: block; margin-bottom: .25rem; color: var(--red); font: .74rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .story-meta strong { font: 500 1.05rem var(--serif); }
-.story-lead { margin: 0; }
-.story-lead img { width: 100%; max-height: 78vh; object-fit: cover; object-position: center 45%; }
-.story-lead figcaption { padding-block: .3rem; }
+.story-lead { margin: 0; overflow: hidden; padding-block: 5rem 2rem; background: #111311; }
+.story-lead .photo { width: 100%; max-height: 72vh; object-fit: cover; object-position: center 45%; }
+.story-lead figcaption { margin-top: 1.4rem; color: #b8beb8; }
 .story-body { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; padding-block: 7rem; }
 .story-number { color: var(--red); font: .8rem var(--mono); }
 .reading-column { max-width: 36rem; font-size: 1.18rem; }
@@ -239,8 +259,9 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1.5rem; }
 .story-frame { display: flex; flex-direction: column; margin: 0; }
 .story-frame-large { grid-row: span 2; }
-.story-frame img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.story-frame-large img { flex: 1 1 0; height: 0; min-height: 0; aspect-ratio: auto; }
+.story-frame .photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.story-frame-large .glow { flex: 1 1 0; height: 0; min-height: 0; }
+.story-frame-large .photo { height: 100%; aspect-ratio: auto; }
 .story-frame figcaption { display: block; margin-top: .8rem; }
 .story-frame figcaption span, .story-frame figcaption strong, .story-frame figcaption small { display: block; }
 .story-frame figcaption span { color: var(--red); font: .76rem var(--mono); text-transform: uppercase; }
@@ -249,15 +270,47 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
 .story-end { padding-block: 7rem; border-top: 1px solid var(--line); }
 .story-end h2 { margin-bottom: 2rem; }
 
-/* ---------- Hover: one thing that moves ---------- */
-.archive-card:hover img, .story-frame:hover img { transform: scale(1.015); }
-.archive-card, .story-frame { overflow: hidden; }
+/* ---------- Hover: the photo lifts and lights up the space around it ---------- */
+.archive-card .glow, .story-frame .glow { transition: transform 350ms cubic-bezier(.2, .7, .2, 1); }
+.archive-card:hover .glow, .story-frame:hover .glow { transform: translateY(-6px); }
+.archive-card:hover .glow-light, .story-frame:hover .glow-light { opacity: .6; transform: scale(1.08); }
+/* On a dark band the light is always faintly on, and much stronger on hover. */
+.dark .archive-card .glow-light { opacity: .3; }
+.dark .archive-card:hover .glow-light { opacity: 1; transform: scale(1.12); }
+
+/* ---------- Entrance and scroll motion ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(1.6rem); } to { opacity: 1; transform: none; } }
+@keyframes hero-drift { from { transform: scale(1.12); } to { transform: scale(1); } }
+@keyframes reveal { from { opacity: 0; transform: translateY(3rem); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Page openings: the hero photo slowly pulls back while the title lines rise in one after another. */
+  .hero > img { animation: hero-drift 20s cubic-bezier(.2, .6, .2, 1) both; }
+  .hero-copy > *, .page-intro > *, .story-header > * { animation: rise 900ms cubic-bezier(.2, .7, .2, 1) both; }
+  .hero-copy > :nth-child(2), .page-intro > :nth-child(2), .story-header > :nth-child(2) { animation-delay: 120ms; }
+  .hero-copy > :nth-child(3), .page-intro > :nth-child(3), .story-header > :nth-child(3) { animation-delay: 240ms; }
+  .hero-copy > :nth-child(4), .story-header > :nth-child(4) { animation-delay: 360ms; }
+
+  /* Scroll-driven reveal: each card fades up as it enters the screen. No JavaScript;
+     browsers without animation-timeline simply show everything immediately. */
+  @supports (animation-timeline: view()) {
+    .archive-card, .story-frame, .city-card, .city-heading, .section-heading, .route-heading, .archive-showcase, .story-preview figure {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    /* Stagger: cards further right in a row finish a little later. */
+    .photo-grid > :nth-child(2), .photo-grid > :nth-child(4), .more-grid > :nth-child(3n + 2), .city-grid > :nth-child(2), .story-grid > :nth-child(2) { animation-range: entry 8% cover 34%; }
+    .photo-grid > :nth-child(3), .photo-grid > :nth-child(5), .more-grid > :nth-child(3n + 3), .city-grid > :nth-child(3), .story-grid > :nth-child(3) { animation-range: entry 16% cover 40%; }
+  }
+}
 
 /* ---------- Tablet and phone ---------- */
 @media (max-width: 960px) {
   .photo-grid { grid-template-columns: 1fr 1fr; }
   .photo-grid > .archive-card:first-child { grid-column: 1 / -1; grid-row: auto; }
-  .photo-grid > .archive-card:first-child img { flex: none; height: auto; aspect-ratio: 16 / 9; }
+  .photo-grid > .archive-card:first-child .glow { flex: none; height: auto; }
+  .photo-grid > .archive-card:first-child .photo { height: auto; aspect-ratio: 16 / 9; }
   .credit-list { grid-template-columns: 1fr; }
   .more-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -290,18 +343,21 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-to
   .city-section { padding-bottom: 4.5rem; }
   .section-heading { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .city-grid, .photo-grid, .more-grid { grid-template-columns: 1fr; }
-  .archive-card-panorama img { aspect-ratio: 16 / 9; object-position: 30% center; }
+  .archive-card-panorama .photo { aspect-ratio: 16 / 9; object-position: 30% center; }
   .city-card { min-height: 360px; }
-  .photo-grid > .archive-card:first-child img, .route-image-wrap img { aspect-ratio: 4 / 3; }
+  .photo-grid > .archive-card:first-child .photo, .route-image-wrap img { aspect-ratio: 4 / 3; }
+  .archive-band .archive-layout { padding-block: 5rem; }
+  .story-lead { padding-block: 3rem 1.5rem; }
   .route-bar { gap: .5rem; }
   .route-arrow { width: 2.5rem; height: 2.5rem; }
   .contact-form { grid-template-columns: 1fr; }
   .page-intro, .story-header { padding-block: 4.5rem 3rem; }
   .story-meta { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .story-lead img { min-height: 360px; }
+  .story-lead .photo { min-height: 300px; }
   .story-lead figcaption { flex-direction: column; gap: .2rem; }
   .story-frame-large { grid-row: auto; }
-  .story-frame-large img { flex: none; height: auto; aspect-ratio: 4 / 3; }
+  .story-frame-large .glow { flex: none; height: auto; }
+  .story-frame-large .photo { height: auto; aspect-ratio: 4 / 3; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-inner > p { display: none; }
   .footer-bottom { flex-direction: column; }
