@@ -43,13 +43,15 @@ The site built from it is in [Midterm/](Midterm/README.md).
 - Live site (GitHub Pages): https://auto-mooncell.github.io/Web-26fall/Midterm/
   — works after this folder is pushed and Pages is enabled for the repository.
 - [Home](Midterm/index.html)
-- [City Album](Midterm/atlas.html)
+- [City Album](Midterm/atlas.html): [New York](Midterm/new-york.html), [Tokyo](Midterm/tokyo.html), [Paris](Midterm/paris.html), [Shanghai](Midterm/shanghai.html)
 - [Photo Story](Midterm/story.html)
 - [Project README](Midterm/README.md)
 
-The site is a three-page photo archive for New York, Tokyo, and Paris. It uses
-twenty-four credited photographs, responsive layouts, a small JavaScript slideshow,
-and a FormSpree contact form for sharing city memories.
+The site is a photo archive of New York, Tokyo, Paris, and Shanghai: a home
+page, an album page with landmark-icon city tiles, one page per city (all from
+the same template, each showing the city's bright side and what is behind it),
+and a photo story. It uses thirty-two credited photographs, responsive layouts,
+a small JavaScript slideshow, and a FormSpree contact form.
 
 ## Previous midterm study: Weekend Oven
 

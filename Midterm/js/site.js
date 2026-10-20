@@ -31,6 +31,11 @@ const routeData = {
     { src: 'img/paris.jpg', alt: 'Cream stone apartment buildings above a corner cafe in Paris', place: 'Neighborhood street / Paris', title: 'The room above the cafe', description: 'Balconies, shutters, and a cafe awning make the facade feel lived in from the sidewalk.', credit: 'T / Unsplash' },
     { src: 'img/paris-rue.jpg', alt: 'A long, nearly empty Paris street lined with stone buildings and a crosswalk', place: 'Rue Réaumur / Paris', title: 'Lines of the afternoon', description: 'The street points forward, but every window adds another direction to look.', credit: 'JLPC / CC BY-SA 3.0' },
     { src: 'img/paris-cafe-gare.jpg', alt: 'The pale stone front of the Café de la Gare theatre in Paris', place: 'Café de la Gare / Paris', title: 'A place to stop', description: 'A doorway, a sign, and a few posters: enough to make a passer-by slow down.', credit: 'Styx / CC BY-SA 3.0' }
+  ],
+  shanghai: [
+    { src: 'img/shanghai-lujiazui.jpg', alt: 'The Lujiazui skyline and the Oriental Pearl Tower lit pink, blue and violet across the Huangpu River at night', place: 'Lujiazui / Shanghai', title: 'The river turns into a screen', description: 'Every tower is lit at once, and the Huangpu doubles the whole skyline back at you.', credit: 'Larry Qian / CC0' },
+    { src: 'img/shanghai-wukang.jpg', alt: 'Plane trees arching over a quiet stretch of Wukang Road', place: 'Wukang Road / Shanghai', title: 'A ceiling of plane trees', description: 'A few streets away from the skyline, the trees close over the road and the city slows to walking pace.', credit: 'SSYoung / CC BY-SA 4.0' },
+    { src: 'img/shanghai-lane.jpg', alt: 'A narrow lilong lane in Zhenxingli with bicycles parked along the old brick walls', place: 'Zhenxingli / Shanghai', title: 'Bicycles wait in the lane', description: 'Doors, bicycles and drying laundry: a lane is a hallway that a whole neighbourhood shares.', credit: 'Livelikerw / CC BY-SA 3.0' }
   ]
 };
 

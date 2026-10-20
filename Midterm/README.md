@@ -1,7 +1,8 @@
 # City, Remembered
 
-A small photo archive about everyday urban details in New York, Tokyo, and
-Paris: streets, storefronts, signs, and people rather than famous landmarks.
+A small photo archive of New York, Tokyo, Paris, and Shanghai. Each city
+shows two sides: the bright, famous face everyone already knows, and the
+everyday streets, storefronts, and people behind it.
 It is aimed at people who like photography, design, and travel, and asks them
 to slow down and notice the places they usually walk past.
 
@@ -13,8 +14,11 @@ This is the built version of the proposal in
 
 ## Pages
 
-- [Home](index.html): hero, three city previews, the archive idea, a story preview, and the "Share a memory" contact form
-- [City Album](atlas.html): a three-frame route slideshow, then eight photographs per city in anchored sections (`#new-york`, `#tokyo`, `#paris`): five shown at first, three more behind a "Show more" button, plus a full credits list
+- [Home](index.html): hero, four city previews, the archive idea, a story preview, and the "Share a memory" contact form
+- [City Album](atlas.html): four city tiles with landmark icons, then a route slideshow (three frames per city)
+- City pages, all built from the same template: [New York](new-york.html), [Tokyo](tokyo.html), [Paris](paris.html), [Shanghai](shanghai.html).
+  Each has "01 / The bright side" (two large photos on a dark band), "02 / Behind it" (six everyday photos),
+  previous / next city links, and that city's photo credits
 - [Photo Story](story.html): a short New York photo essay
 
 ## Sitemap and wireframe
@@ -23,9 +27,12 @@ This is the built version of the proposal in
 
 ![Desktop home wireframe](../Week05/city-memory/wireframe-desktop.png)
 
-The finished site follows the proposal's three-page structure. Changes from
-the proposal: eight photos per city instead of three (five visible, three behind "Show more"), a contact form on the
-home page, and one small JavaScript slideshow on the album page.
+Changes from the proposal: Shanghai was added as a fourth city, and the
+album's three in-page sections became an album page plus one page per city.
+The four city pages share one HTML template and the same CSS, so the site is
+still three kinds of page (home, album, story) rather than seven separate
+designs. Each city now has eight photos instead of three, the home page has a
+contact form, and the album has one small JavaScript slideshow.
 
 ## Course concepts used
 
@@ -33,12 +40,12 @@ home page, and one small JavaScript slideshow on the album page.
 - Alt text written for what each photograph actually shows
 - CSS variables at `:root` for every colour, with a light accent for dark sections so text stays readable
 - Flexbox for the header, navigation, buttons, and captions
-- CSS Grid for the city cards, the album (one large frame plus a 2 × 2 block), the story layout, and the form
+- CSS Grid for the city cards and tiles, the "Behind it" layout (one large frame spanning two rows, two beside it, then a row of three), the story layout, and the form
 - Positioning for text over the hero and the city cards
 - Media queries at `960px` and `768px`; everything stacks to one column on a phone
 - Transitions and hover transforms on buttons, cards, and the slideshow
 - A FormSpree contact form (Week 7): labels tied to inputs with `for`/`id`, `name` on every field, `required`, `method="POST"`
-- A native `<details>`/`<summary>` element for "Show more" frames, with a small `@keyframes` fade-in (no JavaScript)
+- Inline SVG icons coloured with `currentColor`, so hover can change their colour from CSS
 - `prefers-reduced-motion` support: every animation below is switched off for people who ask for less motion
 
 ## Motion and ambient light
@@ -47,11 +54,13 @@ home page, and one small JavaScript slideshow on the album page.
   that extension paints a blurred, enlarged copy of the video behind the player so its colours spill
   onto the page. Here it is pure CSS. Each photo sits in a `.glow` wrapper with a second copy of
   itself (`.glow-light`) behind it (`z-index: -1`), blurred with `filter: blur() saturate()` and
-  enlarged with `transform: scale()`. On the dark bands (the album slideshow, the home archive
-  section, and the story's opening photo) it is always on, with a slow `@keyframes` "breathing"
-  scale. When the slideshow changes frame, the light dims and returns with the new photo's colours.
-- **Hover:** album and story photos lift and light up the space around them, most strongly in the dark Tokyo section.
-- **Page openings:** the home hero photo slowly pulls back (`scale(1.12)` → `scale(1)`) while the title lines rise in one after another (`animation-delay`).
+  enlarged with `transform: scale()`. On the dark bands (each city's "bright side", the album
+  slideshow, the home archive section, and the story's opening photo) it is always on, with a slow
+  `@keyframes` "breathing" scale. When the slideshow changes frame, the light dims and returns with
+  the new photo's colours.
+- **Hover:** city photos and story photos lift and light up the space around them. On the album page, a
+  city tile turns dark and its landmark icon lights up.
+- **Page openings:** the home hero photo slowly pulls back (`scale(1.12)` → `scale(1)`) while the title lines rise in one after another (`animation-delay`). The album's four city tiles rise in the same way.
 - **Scroll reveal:** cards fade up as they enter the screen using CSS `animation-timeline: view()`, with later columns slightly delayed. Browsers that do not support it simply show the cards.
 
 ## JavaScript
@@ -59,7 +68,7 @@ home page, and one small JavaScript slideshow on the album page.
 `js/site.js` does two things, both commented in the file:
 
 1. **Mobile menu:** the Menu button toggles a class on the navigation and keeps `aria-expanded` in sync.
-2. **Route slideshow:** a `routeData` object holds three frames per city. Clicking a city, an arrow, or a thumbnail changes `activeCity` / `activeFrame`, and `render()` copies that frame's image and text into the page, and gives the ambient light behind it the same photo. The arrows use `(frame + step + count) % count` so going back from the first frame wraps to the last.
+2. **Route slideshow** (album page): a `routeData` object holds three frames for each of the four cities. Clicking a city, an arrow, or a thumbnail changes `activeCity` / `activeFrame`, and `render()` copies that frame's image and text into the page, and gives the ambient light behind it the same photo. The arrows use `(frame + step + count) % count` so going back from the first frame wraps to the last.
 
 Everything else, including the album and navigation, works without JavaScript.
 
@@ -73,8 +82,15 @@ The form posts to FormSpree. Before it can send email:
 
 ## Images
 
-All photographs are by other photographers (none are mine). They were resized
-to at most 1600px and compressed to roughly 100–500 KB each.
+All 32 photographs are by other photographers (none are mine). They were resized
+to at most 1600px and compressed to roughly 100–500 KB each. Each city page also
+lists its own credits at the bottom.
+
+City icons (`img/icons/`, used inline in the pages) are from
+[MingCute](https://github.com/mingcute-design/mingcute-icons), Apache License 2.0:
+`statue-of-liberty-line` (New York), `miyajima-torii-line` (Tokyo; the set has no
+Tokyo Tower), `eiffel-tower-line` (Paris) and `tv-tower-line` (Shanghai, the shape of
+the Oriental Pearl Tower).
 
 | File | Photographer / license | Source |
 | --- | --- | --- |
@@ -102,6 +118,14 @@ to at most 1600px and compressed to roughly 100–500 KB each.
 | `paris-eiffel-seine.jpg` | Unsplash License (photographer to confirm) | [Unsplash image](https://images.unsplash.com/photo-1502602898657-3e91760cbb34) |
 | `paris-eiffel-above.jpg` | Unsplash License (photographer to confirm) | [Unsplash image](https://images.unsplash.com/photo-1511739001486-6bfe10ce785f) |
 | `paris-notre-dame.jpg` | Dietmar Rabich / CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Paris,_Notre_Dame_--_2014_--_1458-65.jpg) |
+| `shanghai-lujiazui.jpg` | Larry Qian / CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Shanghai_Lujiazui_night_skyline_2017_-_Flickr.jpg) |
+| `shanghai-nanjing-road.jpg` | TheBlueRutabaga / CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nanjing_Pedestrian_Shopping_Street_at_Evening.jpg) |
+| `shanghai-wukang.jpg` | SSYoung / CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wukang_Road,_Shanghai,_May_2016.JPG) |
+| `shanghai-lane.jpg` | Livelikerw / CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_Lane_in_Zhenxingli.jpg) |
+| `shanghai-fan-shop.jpg` | xiquinhosilva / CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tianzifang_21636-Shanghai_(33070680185).jpg) |
+| `shanghai-crossing.jpg` | Benlisquare / CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Shanghai_traffic_police_at_a_pedestrian_crossing.jpg) |
+| `shanghai-ferry.jpg` | Fayhoo / CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hufeng_No.1_Ferry_was_sailing_across_the_Huangpu_River_torwards_the_Maqiao_dock.JPG) |
+| `shanghai-mural.jpg` | xiquinhosilva / CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tianzifang_21668-Shanghai_(32944101751).jpg) |
 
 ## Inspiration
 
@@ -115,4 +139,5 @@ The site borrows these ideas, not their layouts, code, or images.
 
 - Confirm the photographer names for the Unsplash images marked above, and where `tokyo-curves.jpg` was taken
 - Replace more stock photos with my own photographs
+- Paris's "bright side" is romantic rather than modern; a La Défense photo could show its modern face
 - Turn submitted memories into captions in the album
