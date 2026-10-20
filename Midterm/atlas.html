@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browse the City, Remembered photographic archive of New York, Tokyo, and Paris.">
+    <title>City Album | City, Remembered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">City, <em>Remembered</em></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="atlas.html" aria-current="page">City Album</a>
+        <a href="story.html">Photo Story</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-intro section-wrap" aria-labelledby="page-title">
+        <p class="kicker">The city album</p>
+        <h1 id="page-title">Look around.<br><em>Stay a while.</em></h1>
+        <p class="page-lede">Twenty-four photographs, three cities, and the details that make a place feel familiar.</p>
+      </section>
+
+      <nav class="city-jump section-wrap" aria-label="Jump to a city">
+        <span>Jump to</span>
+        <a href="#new-york">New York</a>
+        <a href="#tokyo">Tokyo</a>
+        <a href="#paris">Paris</a>
+      </nav>
+
+      <section class="route-section dark" aria-labelledby="route-title">
+        <div class="section-wrap">
+          <div class="route-heading">
+            <div>
+              <p class="kicker">Archive route</p>
+              <h2 id="route-title">Follow a place<br><em>through three frames.</em></h2>
+            </div>
+            <p>A small version of the place-based browsing behind Getty's <cite>12 Sunsets</cite>. Choose a city, then step through a short visual sequence.</p>
+          </div>
+
+          <div class="route-city-buttons" role="group" aria-label="Choose a city">
+            <button class="route-city-button is-active" type="button" data-route-city="new-york" aria-pressed="true">New York</button>
+            <button class="route-city-button" type="button" data-route-city="tokyo" aria-pressed="false">Tokyo</button>
+            <button class="route-city-button" type="button" data-route-city="paris" aria-pressed="false">Paris</button>
+          </div>
+
+          <div class="route-view" aria-live="polite">
+            <div class="route-image-wrap">
+              <img id="route-image" src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs">
+              <span class="route-image-label">Frame <span id="route-number">01</span> / 03</span>
+            </div>
+            <div class="route-copy">
+              <p id="route-place" class="kicker">Times Square / New York</p>
+              <h3 id="route-frame-title">The center keeps moving</h3>
+              <p id="route-description">A crossing holds a city together for a few seconds, then releases everyone back into separate directions.</p>
+              <p id="route-credit" class="route-credit">Aaron Sebastian / Unsplash</p>
+            </div>
+          </div>
+
+          <div class="route-bar">
+            <button class="route-arrow" type="button" data-route-step="-1" aria-label="Previous frame">←</button>
+            <div class="route-track" role="group" aria-label="Choose a frame"></div>
+            <button class="route-arrow" type="button" data-route-step="1" aria-label="Next frame">→</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="new-york" class="city-archive" aria-labelledby="new-york-title">
+        <div class="section-wrap">
+          <div class="city-heading">
+            <div><p class="kicker">United States</p><h2 id="new-york-title">New York</h2></div>
+            <p>Motion at street level. A city that keeps changing in front of you.</p>
+          </div>
+          <div class="photo-grid">
+            <figure class="archive-card">
+              <img src="img/new-york.jpg" width="1600" height="1029" alt="Crowds and taxis crossing Times Square under large illuminated signs" loading="lazy">
+              <figcaption><span>Street / Times Square</span><strong>The center keeps moving</strong><small>Aaron Sebastian / Unsplash</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/nyc-diner.jpg" width="1280" height="720" alt="The neon front of Brooklyn Diner on a city street at dusk" loading="lazy">
+              <figcaption><span>Storefront / Brooklyn Diner</span><strong>A corner that stays</strong><small>Frank Schulenburg / CC BY-SA 4.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/nyc-park.jpg" width="1280" height="894" alt="A large tree beside a path and a stone bridge in Central Park" loading="lazy">
+              <figcaption><span>Green space / Central Park</span><strong>Room inside the city</strong><small>Jet Lowe / Public domain</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/nyc-ferry.jpg" width="1068" height="1600" alt="A crowd waiting along a waterfront railing, with the Statue of Liberty in the distance" loading="lazy">
+              <figcaption><span>People / Liberty Island</span><strong>Waiting for the water</strong><small>Jakub Hałun / CC BY 4.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/nyc-brooklyn-bridge.jpg" width="1600" height="931" alt="The cables of the Brooklyn Bridge framing the Manhattan skyline at sunset" loading="lazy">
+              <figcaption><span>Structure / Brooklyn Bridge</span><strong>A city held in lines</strong><small>Unsplash</small></figcaption>
+            </figure>
+          </div>
+          <details class="more-frames">
+            <summary><span class="more-closed">Show 3 more frames from New York</span><span class="more-open">Hide the extra frames</span></summary>
+            <div class="more-grid">
+              <figure class="archive-card">
+                <img src="img/nyc-street.jpg" width="1280" height="853" alt="A bronze statue of a rider on a rearing horse among bare trees, in front of a tall apartment building" loading="lazy">
+                <figcaption><span>Monument / New York</span><strong>A rider among the windows</strong><small>Mike Peel / CC BY-SA 4.0</small></figcaption>
+              </figure>
+              <figure class="archive-card">
+                <img src="img/nyc-midtown-skyline.jpg" width="1600" height="1067" alt="Looking down over Midtown Manhattan toward the Empire State Building and the harbor" loading="lazy">
+                <figcaption><span>Skyline / Midtown</span><strong>The long view</strong><small>Unsplash</small></figcaption>
+              </figure>
+              <figure class="archive-card">
+                <img src="img/nyc-empire-evening.jpg" width="1600" height="1067" alt="The Empire State Building above dense Manhattan rooftops under an orange evening sky" loading="lazy">
+                <figcaption><span>Skyline / Manhattan</span><strong>Windows after light</strong><small>Unsplash</small></figcaption>
+              </figure>
+            </div>
+          </details>
+          <p class="story-cta"><a class="text-link" href="story.html">Read the New York photo story <span aria-hidden="true">→</span></a></p>
+        </div>
+      </section>
+
+      <section id="tokyo" class="city-archive dark" aria-labelledby="tokyo-title">
+        <div class="section-wrap">
+          <div class="city-heading">
+            <div><p class="kicker">Japan</p><h2 id="tokyo-title">Tokyo</h2></div>
+            <p>Shade, rhythm, and the quiet patterns between people.</p>
+          </div>
+          <div class="photo-grid">
+            <figure class="archive-card">
+              <img src="img/tokyo.jpg" width="1600" height="900" alt="Two people walking away down a tree-lined Tokyo street" loading="lazy">
+              <figcaption><span>People / Marunouchi</span><strong>A slower way through</strong><small>James Pere / Unsplash</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/tokyo-cups.jpg" width="1280" height="1024" alt="Balconies shaped like a cream coffee cup and a red coffee cup on a Tokyo building" loading="lazy">
+              <figcaption><span>Facade / Kappabashi</span><strong>A sign above the street</strong><small>Basile Morin / CC BY-SA 4.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/tokyo-mirrors.jpg" width="1280" height="960" alt="A street crowd reflected in the angled mirrors of a Harajuku entrance" loading="lazy">
+              <figcaption><span>People / Harajuku</span><strong>The crowd, doubled</strong><small>Basile Morin / CC BY-SA 4.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/tokyo-akihabara.jpg" width="1280" height="853" alt="Pedestrians walking down the middle of Akihabara's main street while it is closed to cars" loading="lazy">
+              <figcaption><span>Street / Akihabara</span><strong>The road opens up</strong><small>Ximonic / CC BY-SA 4.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/tokyo-hiroo.jpg" width="1280" height="960" alt="A road-closed sign on a small shopping street in Hiroo, Tokyo" loading="lazy">
+              <figcaption><span>Street / Hiroo</span><strong>An afternoon for walkers</strong><small>Syced / CC0</small></figcaption>
+            </figure>
+          </div>
+          <details class="more-frames">
+            <summary><span class="more-closed">Show 3 more frames from Tokyo</span><span class="more-open">Hide the extra frames</span></summary>
+            <div class="more-grid">
+              <figure class="archive-card">
+                <img src="img/tokyo-akihabara-neon.jpg" width="1600" height="1038" alt="Pedestrians crossing a wet street in Akihabara under bright neon signs and game arcades" loading="lazy">
+                <figcaption><span>Street / Akihabara</span><strong>Signs make their own weather</strong><small>Unsplash</small></figcaption>
+              </figure>
+              <figure class="archive-card">
+                <img src="img/tokyo-curves.jpg" width="1254" height="1600" alt="Looking straight up between two curved white buildings striped with bands of windows" loading="lazy">
+                <figcaption><span>Looking up</span><strong>The scale changes overhead</strong><small>Unsplash</small></figcaption>
+              </figure>
+              <figure class="archive-card">
+                <img src="img/tokyo-tower-rain.jpg" width="1476" height="1600" alt="Tokyo Tower reflected in a wet street at dusk" loading="lazy">
+                <figcaption><span>Street / Tokyo Tower</span><strong>Rain keeps the lights</strong><small>Unsplash</small></figcaption>
+              </figure>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="paris" class="city-archive" aria-labelledby="paris-title">
+        <div class="section-wrap">
+          <div class="city-heading">
+            <div><p class="kicker">France</p><h2 id="paris-title">Paris</h2></div>
+            <p>Facades, weather, and the familiar feeling of returning.</p>
+          </div>
+          <div class="photo-grid">
+            <figure class="archive-card">
+              <img src="img/paris.jpg" width="1070" height="1600" alt="Cream stone apartment buildings above a corner cafe in Paris" loading="lazy">
+              <figcaption><span>Facade / Neighborhood street</span><strong>The room above the cafe</strong><small>T / Unsplash</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/paris-rue.jpg" width="1280" height="869" alt="A long, nearly empty Paris street lined with stone buildings and a crosswalk" loading="lazy">
+              <figcaption><span>Street / Rue Réaumur</span><strong>Lines of the afternoon</strong><small>JLPC / CC BY-SA 3.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/paris-cafe-gare.jpg" width="1280" height="958" alt="The pale stone front of the Café de la Gare theatre in Paris" loading="lazy">
+              <figcaption><span>Storefront / Café de la Gare</span><strong>A place to stop</strong><small>Styx / CC BY-SA 3.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/paris-trocadero.jpg" width="1280" height="853" alt="Trees and parked cars in front of a corner apartment building near Trocadéro" loading="lazy">
+              <figcaption><span>Street / Trocadéro</span><strong>Shade in front of the facade</strong><small>Lionel Allorge / CC BY-SA 3.0</small></figcaption>
+            </figure>
+            <figure class="archive-card">
+              <img src="img/paris-pont-alexandre.jpg" width="1600" height="1132" alt="Ornate lamps along the Pont Alexandre III above the Seine at dusk" loading="lazy">
+              <figcaption><span>Structure / Pont Alexandre III</span><strong>Lights along the water</strong><small>Unsplash</small></figcaption>
+            </figure>
+          </div>
+          <details class="more-frames">
+            <summary><span class="more-closed">Show 3 more frames from Paris</span><span class="more-open">Hide the extra frames</span></summary>
+            <div class="more-grid">
+              <figure class="archive-card">
+                <img src="img/paris-eiffel-seine.jpg" width="1600" height="1064" alt="The Eiffel Tower above the Seine and its riverboats at dusk" loading="lazy">
+                <figcaption><span>River / Seine</span><strong>The river keeps the horizon</strong><small>Unsplash</small></figcaption>
+              </figure>
+              <figure class="archive-card">
+                <img src="img/paris-eiffel-above.jpg" width="1067" height="1600" alt="The Eiffel Tower under a blue sky, seen from above the autumn trees of Trocadéro" loading="lazy">
+                <figcaption><span>View / Trocadéro</span><strong>Everyone's first photograph</strong><small>Unsplash</small></figcaption>
+              </figure>
+              <figure class="archive-card archive-card-panorama">
+                <img src="img/paris-notre-dame.jpg" width="1280" height="216" alt="The row of carved stone kings across the west front of Notre-Dame" loading="lazy">
+                <figcaption><span>Facade / Notre-Dame</span><strong>A row of kings above the doors</strong><small>Dietmar Rabich / CC BY-SA 4.0</small></figcaption>
+              </figure>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="credits" class="credits-band" aria-labelledby="credits-title">
+        <div class="section-wrap credits-layout">
+          <div>
+            <p class="kicker">Archive notes</p>
+            <h2 id="credits-title">Every frame has a photographer.</h2>
+            <p>None of these photographs were taken by me. This is a student project about looking closely; the captions are my own observations of the images, not travel memories.</p>
+          </div>
+          <ul class="credit-list">
+            <li><strong>Times Square</strong><a href="https://unsplash.com/photos/new-york-street-during-daytime-XWl8Pu3HrgY">Aaron Sebastian, Unsplash</a></li>
+            <li><strong>Brooklyn Diner</strong><a href="https://commons.wikimedia.org/wiki/File:Brooklyn_Diner,_New_York_City_(2024)-L1006207.jpg">Frank Schulenburg, CC BY-SA 4.0</a></li>
+            <li><strong>Central Park</strong><a href="https://commons.wikimedia.org/wiki/File:Central_Park_New_York_City_New_York_23_cropped.jpg">Jet Lowe, public domain</a></li>
+            <li><strong>Liberty Island</strong><a href="https://commons.wikimedia.org/wiki/File:Liberty_Island_Ferry_Terminal,_New_York_City,_20231003_1438_1942.jpg">Jakub Hałun, CC BY 4.0</a></li>
+            <li><strong>Brooklyn Bridge</strong><a href="https://images.unsplash.com/photo-1522083165195-3424ed129620">Unsplash</a></li>
+            <li><strong>New York monument</strong><a href="https://commons.wikimedia.org/wiki/File:At_New_York_City_2024_366.jpg">Mike Peel, CC BY-SA 4.0</a></li>
+            <li><strong>Midtown skyline</strong><a href="https://images.unsplash.com/photo-1534430480872-3498386e7856">Unsplash</a></li>
+            <li><strong>Empire State, evening</strong><a href="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee">Unsplash</a></li>
+            <li><strong>Marunouchi</strong><a href="https://unsplash.com/photos/a-man-and-woman-walking-down-a-street-XkQv2du-RCU">James Pere, Unsplash</a></li>
+            <li><strong>Kappabashi</strong><a href="https://commons.wikimedia.org/wiki/File:Cream_and_red_coffee_cup-shaped_balconies,_Niimi_Tableware,_Kappabashi_Dougu_Street,_Tokyo,_Japan.jpg">Basile Morin, CC BY-SA 4.0</a></li>
+            <li><strong>Harajuku</strong><a href="https://commons.wikimedia.org/wiki/File:Street_crowd_reflecting_in_the_polyhedral_mirrors_of_the_station_Tokyu_Plaza_Omotesando,_Harajuku,_Tokyo,_Japan.jpg">Basile Morin, CC BY-SA 4.0</a></li>
+            <li><strong>Akihabara</strong><a href="https://commons.wikimedia.org/wiki/File:Akihabara_Main_Street_open_for_pedestrians,_Chiyoda,_Tokyo,_2024_May.jpg">Ximonic, CC BY-SA 4.0</a></li>
+            <li><strong>Hiroo</strong><a href="https://commons.wikimedia.org/wiki/File:Pedestrian-only_afternoon_in_Hiroo_%E5%BA%83%E5%B0%BE%E5%95%86%E5%BA%97%E8%A1%97.jpg">Syced, CC0</a></li>
+            <li><strong>Akihabara at night</strong><a href="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf">Unsplash</a></li>
+            <li><strong>Curved facades</strong><a href="https://images.unsplash.com/photo-1518005020951-eccb494ad742">Unsplash</a></li>
+            <li><strong>Tokyo Tower in the rain</strong><a href="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc">Unsplash</a></li>
+            <li><strong>Paris neighborhood street</strong><a href="https://unsplash.com/photos/parisian-street-with-cafes-and-apartment-buildings-LLPnMGoedUM">T (@tanyabarrow), Unsplash</a></li>
+            <li><strong>Rue Réaumur</strong><a href="https://commons.wikimedia.org/wiki/File:Paris_Rue_R%C3%A9aumur_2013.jpg">JLPC, CC BY-SA 3.0</a></li>
+            <li><strong>Café de la Gare</strong><a href="https://commons.wikimedia.org/wiki/File:Caf%C3%A9_de_la_Gare_Paris.jpg">Styx, CC BY-SA 3.0</a></li>
+            <li><strong>Trocadéro</strong><a href="https://commons.wikimedia.org/wiki/File:Place_du_Trocad%C3%A9ro-et-du-11-Novembre_%C3%A0_Paris_le_23_avril_2015_-_36.jpg">Lionel Allorge, CC BY-SA 3.0</a></li>
+            <li><strong>Pont Alexandre III</strong><a href="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">Unsplash</a></li>
+            <li><strong>Eiffel Tower and the Seine</strong><a href="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">Unsplash</a></li>
+            <li><strong>Eiffel Tower from Trocadéro</strong><a href="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f">Unsplash</a></li>
+            <li><strong>Notre-Dame, Gallery of Kings</strong><a href="https://commons.wikimedia.org/wiki/File:Paris,_Notre_Dame_--_2014_--_1458-65.jpg">Dietmar Rabich, CC BY-SA 4.0</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner section-wrap">
+        <a class="footer-mark" href="index.html">City, <em>Remembered.</em></a>
+        <p>Look closely.<br>Keep the trace.</p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="story.html">Story</a>
+          <a href="index.html#share">Share a memory</a>
+          <a href="#credits">Photo credits</a>
+        </nav>
+      </div>
+      <div class="footer-bottom section-wrap"><span>Fall 2026 / HTML + CSS + a little JavaScript</span><span>Photographs by the credited photographers</span></div>
+    </footer>
+  </body>
+</html>
