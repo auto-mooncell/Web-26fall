@@ -25,6 +25,42 @@ This repository contains my coursework for the Fall 2026 web development class.
 The Week 3 recipe page uses semantic elements including `header`, `nav`,
 `main`, `article`, `figure`, `section`, `aside`, and `footer`.
 
+### Week 5: Midterm Proposal
+
+- [Weekend Oven proposal package](Week05/README.md)
+- [Project concept and technical plan](Week05/proposal.md)
+- [Five-page sitemap](Week05/site-map.md)
+- [Desktop and mobile wireframes](Week05/wireframe.md)
+- [Five-minute presentation outline](Week05/presentation.md)
+
+The baking proposal below is an earlier study based on the brownie assignment.
+
+The active proposal is now [City, Remembered](Week05/city-memory/README.md).
+The site built from it is in [Midterm/](Midterm/README.md).
+
+## Midterm: City, Remembered
+
+- Live site (GitHub Pages): https://auto-mooncell.github.io/Web-26fall/Midterm/
+  — works after this folder is pushed and Pages is enabled for the repository.
+- [Home](Midterm/index.html)
+- [City Album](Midterm/atlas.html)
+- [Photo Story](Midterm/story.html)
+- [Project README](Midterm/README.md)
+
+The site is a three-page photo archive for New York, Tokyo, and Paris. It uses
+twenty-four credited photographs, responsive layouts, a small JavaScript slideshow,
+and a FormSpree contact form for sharing city memories.
+
+## Previous midterm study: Weekend Oven
+
+- [Homepage](Midterm-WeekendOven/index.html)
+- [Chocolate brownie recipe](Midterm-WeekendOven/recipe.html)
+- [About, kitchen notes, and image credits](Midterm-WeekendOven/about.html)
+- [Project documentation](Midterm-WeekendOven/README.md)
+
+The working first version has three linked pages, shared CSS, local photographs,
+and mobile layouts. It develops the Week 5 proposal with a smaller scope.
+
 ## Course Materials
 
 The class notes and starter files come from the instructor's course repository:
