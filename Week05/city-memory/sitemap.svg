@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#fafafa"/>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#242424;font-size:20px;letter-spacing:0}
+    .title{font-family:Georgia,serif;font-size:44px}.small{font-size:17px;fill:#575757}
+    .name{font-size:27px;font-weight:700}.file{font-size:20px;fill:#9b3830}
+    .box{fill:#fff;stroke:#343434;stroke-width:2}.line{fill:none;stroke:#9b3830;stroke-width:2.5}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#9b3830"/></marker></defs>
+  <text x="55" y="67" class="title">City, Remembered</text>
+  <text x="55" y="105">SITEMAP / THREE HTML PAGES</text>
+  <rect class="box" x="400" y="148" width="400" height="126" rx="4"/>
+  <text x="600" y="186" text-anchor="middle" class="name">01 / Home</text>
+  <text x="600" y="217" text-anchor="middle" class="file">index.html</text>
+  <text x="600" y="249" text-anchor="middle" class="small">Introduction / city previews / featured story</text>
+  <path class="line" d="M510 274V315H285V348" marker-end="url(#arrow)"/>
+  <path class="line" d="M690 274V315H915V348" marker-end="url(#arrow)"/>
+  <rect class="box" x="60" y="354" width="450" height="270" rx="4"/>
+  <text x="85" y="394" class="name">02 / City Album</text>
+  <text x="85" y="427" class="file">atlas.html</text>
+  <line x1="85" y1="446" x2="485" y2="446" stroke="#d0d0d0"/>
+  <text x="85" y="480">#new-york / 3 photos + captions</text>
+  <text x="85" y="517">#tokyo / 3 photos + captions</text>
+  <text x="85" y="554">#paris / 3 photos + captions</text>
+  <text x="85" y="598" class="small">City links jump to sections on THIS page.</text>
+  <rect class="box" x="690" y="354" width="450" height="270" rx="4"/>
+  <text x="715" y="394" class="name">03 / Photo Story</text>
+  <text x="715" y="427" class="file">story.html</text>
+  <line x1="715" y1="446" x2="1115" y2="446" stroke="#d0d0d0"/>
+  <text x="715" y="480">Featured New York photo essay</text>
+  <text x="715" y="517">~150 words of original commentary</text>
+  <text x="715" y="554">3 photos reused from the album</text>
+  <text x="715" y="598" class="small">Return link: atlas.html#new-york</text>
+  <path class="line" d="M510 480H680" marker-end="url(#arrow)"/>
+  <text x="600" y="464" text-anchor="middle" class="small">Read story</text>
+  <path class="line" d="M690 548H520" marker-end="url(#arrow)"/>
+  <text x="600" y="577" text-anchor="middle" class="small">Back to album</text>
+  <rect x="60" y="675" width="1080" height="79" fill="#e9efeb"/>
+  <text x="85" y="707">On every page: Home / City Album / Photo Story navigation + photo credits</text>
+  <text x="85" y="735" class="small">Three city sections, not three extra pages. No login, live map, search, or JavaScript gallery.</text>
+</svg>

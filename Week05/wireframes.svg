@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1500" height="1520" viewBox="0 0 1500 1520" role="img" aria-labelledby="title desc">
+  <title id="title">Weekend Oven: Home and recipe wireframes</title>
+  <desc id="desc">Four original low-fidelity layouts. Home has a featured photograph and two recipe previews. Recipe pages have ingredients and method side by side on desktop and stacked on mobile. All views share Home, Recipes, and About navigation.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #262626; font-size: 18px; }
+      .heading { font-size: 30px; font-weight: bold; }
+      .label { font-size: 22px; font-weight: bold; }
+      .small { font-size: 15px; }
+      .brand { font-size: 24px; font-weight: bold; }
+      .frame { fill: #ffffff; stroke: #555555; stroke-width: 2; }
+      .region { fill: #eeeeee; stroke: #888888; stroke-width: 1; }
+      .line { fill: none; stroke: #777777; stroke-width: 1; }
+      .placeholder { fill: #dedede; stroke: #999999; stroke-width: 1; }
+    </style>
+    <symbol id="photo" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <rect class="placeholder" x="0.5" y="0.5" width="99" height="99"/>
+      <path class="line" d="M1 1 L99 99 M99 1 L1 99"/>
+    </symbol>
+  </defs>
+  <rect width="1500" height="1520" fill="#f5f5f5"/>
+  <text class="heading" x="40" y="52">Weekend Oven / Midterm proposal</text>
+  <text x="40" y="83">Original wireframes. Gray blocks represent content regions; crossed blocks represent photos.</text>
+
+  <text class="label" x="40" y="131">01 Home / Desktop</text>
+  <rect class="frame" x="40" y="150" width="950" height="580"/>
+  <rect class="region" x="40" y="150" width="950" height="72"/>
+  <text class="brand" x="65" y="194">Weekend Oven</text>
+  <text x="690" y="194">Home     Recipes     About</text>
+  <text class="small" x="65" y="217">header + nav</text>
+  <use xlink:href="#photo" x="65" y="242" width="900" height="205"/>
+  <rect x="85" y="264" width="350" height="158" fill="#ffffff" fill-opacity="0.93"/>
+  <text class="brand" x="104" y="302">Weekend Oven</text>
+  <text x="104" y="332">Something good to share.</text>
+  <text x="104" y="367">Featured: Chocolate Brownies</text>
+  <text class="small" x="104" y="397">View recipe -&gt; brownies.html</text>
+  <text class="small" x="647" y="429">main / featured photograph + title</text>
+  <text class="label" x="65" y="481">Recipes for the weekend</text>
+  <text class="small" x="745" y="481">View all -&gt; recipes/index.html</text>
+  <use xlink:href="#photo" x="65" y="499" width="435" height="116"/>
+  <use xlink:href="#photo" x="530" y="499" width="435" height="116"/>
+  <text x="65" y="644">Chocolate Brownies -&gt; recipe</text>
+  <text x="530" y="644">Lemon Cookies -&gt; recipe</text>
+  <text class="small" x="65" y="669">section / two linked recipe previews</text>
+  <path class="line" d="M40 686 H990"/>
+  <text class="small" x="65" y="715">footer / About + credits</text>
+
+  <text class="label" x="1050" y="131">02 Home / Mobile</text>
+  <rect class="frame" x="1050" y="150" width="390" height="580"/>
+  <rect class="region" x="1050" y="150" width="390" height="89"/>
+  <text class="brand" x="1070" y="185">Weekend Oven</text>
+  <text x="1070" y="219">Home     Recipes     About</text>
+  <use xlink:href="#photo" x="1070" y="259" width="350" height="151"/>
+  <rect x="1082" y="274" width="289" height="116" fill="#ffffff" fill-opacity="0.93"/>
+  <text class="label" x="1094" y="303">Weekend Oven</text>
+  <text class="small" x="1094" y="329">Something good to share.</text>
+  <text class="small" x="1094" y="356">Chocolate Brownies -&gt; recipe</text>
+  <text class="small" x="1094" y="379">main / featured photograph</text>
+  <text class="label" x="1070" y="445">Recipes for the weekend</text>
+  <use xlink:href="#photo" x="1070" y="461" width="350" height="72"/>
+  <text x="1070" y="558">Chocolate Brownies -&gt; recipe</text>
+  <use xlink:href="#photo" x="1070" y="576" width="350" height="72"/>
+  <text x="1070" y="674">Lemon Cookies -&gt; recipe</text>
+  <path class="line" d="M1050 693 H1440"/>
+  <text class="small" x="1070" y="717">footer / About + credits</text>
+  <text class="small" x="40" y="769">Home reading order: header -&gt; featured recipe -&gt; recipe collection -&gt; footer.</text>
+
+  <text class="label" x="40" y="823">03 Recipe detail / Desktop</text>
+  <rect class="frame" x="40" y="845" width="950" height="578"/>
+  <rect class="region" x="40" y="845" width="950" height="65"/>
+  <text class="brand" x="65" y="885">Weekend Oven</text>
+  <text x="690" y="885">Home     Recipes     About</text>
+  <text class="brand" x="65" y="949">Chocolate Brownies</text>
+  <text x="65" y="978">A short introduction. main &gt; article</text>
+  <text class="small" x="65" y="1005">Jump to: Ingredients (#ingredients) / Method (#method)</text>
+  <use xlink:href="#photo" x="65" y="1025" width="900" height="140"/>
+  <rect class="region" x="65" y="1186" width="285" height="160"/>
+  <text class="label" x="83" y="1217">Ingredients</text>
+  <text class="small" x="83" y="1243">section#ingredients / ul</text>
+  <text x="83" y="1274">- Ingredient and amount</text>
+  <text x="83" y="1304">- Ingredient and amount</text>
+  <rect class="region" x="375" y="1186" width="590" height="99"/>
+  <text class="label" x="393" y="1217">Method</text>
+  <text class="small" x="393" y="1243">section#method / ol</text>
+  <text x="393" y="1271">1. First step.     2. Next step.     3. Continue.</text>
+  <rect class="region" x="375" y="1300" width="590" height="46"/>
+  <text class="small" x="393" y="1329">aside / Baking note</text>
+  <path class="line" d="M40 1372 H990"/>
+  <text x="65" y="1403">Related recipe -&gt; Lemon Cookies</text>
+  <text class="small" x="745" y="1403">footer / About + credits</text>
+
+  <text class="label" x="1050" y="823">04 Recipe detail / Mobile</text>
+  <rect class="frame" x="1050" y="845" width="390" height="578"/>
+  <rect class="region" x="1050" y="845" width="390" height="83"/>
+  <text class="brand" x="1070" y="880">Weekend Oven</text>
+  <text x="1070" y="909">Home     Recipes     About</text>
+  <text class="brand" x="1070" y="967">Chocolate Brownies</text>
+  <text class="small" x="1070" y="992">Short introduction / main &gt; article</text>
+  <text class="small" x="1070" y="1016">Jump to: Ingredients / Method</text>
+  <use xlink:href="#photo" x="1070" y="1032" width="350" height="91"/>
+  <rect class="region" x="1070" y="1139" width="350" height="74"/>
+  <text class="label" x="1087" y="1167">Ingredients</text>
+  <text class="small" x="1087" y="1194">section#ingredients / unordered list</text>
+  <rect class="region" x="1070" y="1227" width="350" height="74"/>
+  <text class="label" x="1087" y="1255">Method</text>
+  <text class="small" x="1087" y="1282">section#method / numbered steps</text>
+  <rect class="region" x="1070" y="1315" width="350" height="41"/>
+  <text class="small" x="1087" y="1342">aside / Baking note</text>
+  <path class="line" d="M1050 1372 H1440"/>
+  <text class="small" x="1070" y="1395">Related recipe -&gt; Lemon Cookies</text>
+  <text class="small" x="1070" y="1415">footer / About + credits</text>
+  <text class="small" x="40" y="1464">Recipe reading order: title -&gt; jump links -&gt; photo -&gt; ingredients -&gt; method -&gt; note -&gt; related recipe.</text>
+  <text class="small" x="40" y="1491">Boxes indicate structure only. The final recipe page will grow naturally with the full ingredient and step lists.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080">
+  <rect width="1600" height="1080" fill="#fafafa"/>
+  <style>
+    text{font-family:'Comic Sans MS',cursive;fill:#292929;font-size:20px;letter-spacing:0}
+    .title{font-size:36px}.heading{font-size:25px;font-weight:700}
+    .small{font-size:17px;fill:#555}.tag{font-size:18px;fill:#9b3830}
+    .frame{fill:#fff;stroke:#292929;stroke-width:2}.photo{fill:#ededed;stroke:#a0a0a0}
+    .line{stroke:#b8b8b8;stroke-width:2;fill:none}.rule{stroke:#555;stroke-width:1}
+  </style>
+  <text x="80" y="61" class="title">City, Remembered / Desktop Home</text>
+  <text x="80" y="101">Landscape layout / index.html / schematic full-page overview</text>
+  <rect class="frame" x="80" y="140" width="1440" height="810"/>
+  <text x="110" y="176" class="heading">City, Remembered</text>
+  <text x="730" y="176" class="tag">&lt;header&gt; + &lt;nav&gt;</text>
+  <text x="1485" y="176" text-anchor="end">Home / City Album / Photo Story</text>
+  <line x1="80" y1="200" x2="1520" y2="200" class="rule"/>
+  <rect class="photo" x="110" y="220" width="1380" height="230"/>
+  <path d="M110 220L1490 450M1490 220L110 450" class="line"/>
+  <text x="140" y="257" class="tag">&lt;main&gt; &gt; &lt;section&gt; Hero street photograph</text>
+  <text x="140" y="320" class="title">City, Remembered / &lt;h1&gt;</text>
+  <text x="140" y="359">Small moments. Different cities.</text>
+  <text x="140" y="420" class="small">Title directly over the photograph; this is not a text card.</text>
+  <text x="110" y="489" class="heading">Explore cities / &lt;section&gt; + &lt;h2&gt;</text>
+  <rect class="photo" x="110" y="510" width="440" height="126"/>
+  <rect class="photo" x="580" y="510" width="440" height="126"/>
+  <rect class="photo" x="1050" y="510" width="440" height="126"/>
+  <path d="M110 510L550 636M550 510L110 636M580 510L1020 636M1020 510L580 636M1050 510L1490 636M1490 510L1050 636" class="line"/>
+  <text x="330" y="581" text-anchor="middle">&lt;figure&gt; + &lt;img&gt;</text>
+  <text x="800" y="581" text-anchor="middle">&lt;figure&gt; + &lt;img&gt;</text>
+  <text x="1270" y="581" text-anchor="middle">&lt;figure&gt; + &lt;img&gt;</text>
+  <text x="110" y="666">New York / &lt;figcaption&gt;</text>
+  <text x="580" y="666">Tokyo / &lt;figcaption&gt;</text>
+  <text x="1050" y="666">Paris / &lt;figcaption&gt;</text>
+  <text x="110" y="696" class="tag">&lt;a href="atlas.html#new-york"&gt;</text>
+  <text x="580" y="696" class="tag">&lt;a href="atlas.html#tokyo"&gt;</text>
+  <text x="1050" y="696" class="tag">&lt;a href="atlas.html#paris"&gt;</text>
+  <line x1="110" y1="718" x2="1490" y2="718" class="line"/>
+  <rect class="photo" x="110" y="739" width="270" height="134"/>
+  <path d="M110 739L380 873M380 739L110 873" class="line"/>
+  <text x="410" y="765" class="tag">&lt;article&gt; Featured photo story</text>
+  <text x="410" y="803" class="heading">New York: rhythm of a crossing</text>
+  <text x="410" y="838" class="small">A short preview of an original photo essay.</text>
+  <text x="1135" y="803" class="tag">&lt;a href="story.html"&gt;</text>
+  <text x="1135" y="838">Read the story</text>
+  <line x1="80" y1="895" x2="1520" y2="895" class="rule"/>
+  <text x="110" y="928" class="tag">&lt;footer&gt; Project information / photographers / source links</text>
+  <text x="80" y="994">Desktop: three city previews in one row. Mobile: stack them in one column.</text>
+  <text x="80" y="1034" class="small">Same homepage as the existing overview, not another page. Grey regions are photo placeholders, not final artwork.</text>
+</svg>

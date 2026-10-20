@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1060" viewBox="0 0 1760 1060">
+  <rect width="1760" height="1060" fill="#fafafa"/>
+  <style>
+    text{font-family:'Comic Sans MS',cursive;fill:#292929;font-size:18px;letter-spacing:0}
+    .title{font-size:36px}.heading{font-size:23px;font-weight:700}
+    .small{font-size:14px;fill:#555}.tag{font-size:15px;fill:#9b3830}
+    .frame{fill:white;stroke:#292929;stroke-width:2}.photo{fill:#ededed;stroke:#a0a0a0}
+    .line{stroke:#b8b8b8;stroke-width:2;fill:none}.rule{stroke:#555;stroke-width:1}
+  </style>
+  <text x="40" y="60" class="title">City, Remembered / Wireframes</text>
+  <text x="40" y="95">Original low-fidelity proposal / HTML + CSS / photo-first editorial layout</text>
+  <text x="40" y="149" class="heading">01 / Home</text>
+  <text x="480" y="149" class="heading">02 / City Album</text>
+  <text x="920" y="149" class="heading">03 / Photo Story</text>
+  <text x="1360" y="149" class="heading">Home / phone</text>
+  <rect class="frame" x="40" y="172" width="410" height="730"/>
+  <rect class="frame" x="480" y="172" width="410" height="730"/>
+  <rect class="frame" x="920" y="172" width="410" height="730"/>
+  <rect class="frame" x="1360" y="172" width="350" height="730"/>
+  <!-- Home: full-width hero, city previews, story, credits. -->
+  <text x="55" y="201" class="tag">&lt;header&gt; + &lt;nav&gt;</text>
+  <text x="55" y="229" class="small">City, Remembered | Home / Album / Story</text>
+  <line x1="40" y1="245" x2="450" y2="245" class="rule"/>
+  <rect class="photo" x="55" y="260" width="380" height="218"/>
+  <path d="M55 260L435 478M435 260L55 478" class="line"/>
+  <rect x="71" y="308" width="338" height="94" fill="#fff" fill-opacity=".93"/>
+  <text x="84" y="338" class="tag">&lt;section&gt; hero + &lt;h1&gt;</text>
+  <text x="84" y="374" class="heading">City, Remembered</text>
+  <text x="245" y="453" text-anchor="middle" class="small">Street photo / title over image</text>
+  <text x="55" y="514" class="tag">&lt;section&gt; Explore cities / &lt;h2&gt;</text>
+  <rect class="photo" x="55" y="530" width="118" height="107"/>
+  <rect class="photo" x="186" y="530" width="118" height="107"/>
+  <rect class="photo" x="317" y="530" width="118" height="107"/>
+  <text x="114" y="666" text-anchor="middle" class="small">New York</text>
+  <text x="245" y="666" text-anchor="middle" class="small">Tokyo</text>
+  <text x="376" y="666" text-anchor="middle" class="small">Paris</text>
+  <text x="55" y="696" class="small">Each figure links to an album section.</text>
+  <line x1="55" y1="720" x2="435" y2="720" class="line"/>
+  <text x="55" y="750" class="tag">&lt;article&gt; Featured story / &lt;a&gt;</text>
+  <text x="55" y="779">New York: rhythm of a crossing</text>
+  <line x1="55" y1="795" x2="389" y2="795" class="line"/>
+  <line x1="55" y1="810" x2="350" y2="810" class="line"/>
+  <line x1="40" y1="844" x2="450" y2="844" class="rule"/>
+  <text x="55" y="872" class="tag">&lt;footer&gt; Project + photo credits</text>
+  <!-- Album: one page with three anchored city sections. -->
+  <text x="495" y="201" class="tag">&lt;header&gt; + same &lt;nav&gt;</text>
+  <text x="495" y="229" class="small">City, Remembered | Home / Album / Story</text>
+  <line x1="480" y1="245" x2="890" y2="245" class="rule"/>
+  <text x="495" y="281" class="heading">City Album / &lt;h1&gt;</text>
+  <text x="495" y="311" class="small">Small moments, collected by city.</text>
+  <text x="495" y="344" class="tag">&lt;nav&gt; New York / Tokyo / Paris</text>
+  <text x="495" y="378" class="tag">&lt;section id="new-york"&gt; / &lt;h2&gt;</text>
+  <rect class="photo" x="495" y="394" width="118" height="88"/>
+  <rect class="photo" x="626" y="394" width="118" height="88"/>
+  <rect class="photo" x="757" y="394" width="118" height="88"/>
+  <text x="495" y="508" class="small">&lt;figure&gt; + &lt;img&gt; + &lt;figcaption&gt;</text>
+  <text x="495" y="535" class="small">New York story link: story.html</text>
+  <text x="495" y="573" class="tag">&lt;section id="tokyo"&gt; / &lt;h2&gt;</text>
+  <rect class="photo" x="495" y="589" width="118" height="88"/>
+  <rect class="photo" x="626" y="589" width="118" height="88"/>
+  <rect class="photo" x="757" y="589" width="118" height="88"/>
+  <text x="495" y="703" class="small">Captions: observation / location / credit</text>
+  <text x="495" y="741" class="tag">&lt;section id="paris"&gt; / &lt;h2&gt;</text>
+  <rect class="photo" x="495" y="757" width="118" height="54"/>
+  <rect class="photo" x="626" y="757" width="118" height="54"/>
+  <rect class="photo" x="757" y="757" width="118" height="54"/>
+  <line x1="480" y1="844" x2="890" y2="844" class="rule"/>
+  <text x="495" y="872" class="tag">&lt;footer&gt; Sources + photographers</text>
+  <!-- Story: a linear reading sequence, not a separate city collection. -->
+  <text x="935" y="201" class="tag">&lt;header&gt; + same &lt;nav&gt;</text>
+  <text x="935" y="229" class="small">City, Remembered | Home / Album / Story</text>
+  <line x1="920" y1="245" x2="1330" y2="245" class="rule"/>
+  <text x="935" y="281" class="tag">&lt;main&gt; &gt; &lt;article&gt; / New York</text>
+  <text x="935" y="315" class="heading">Rhythm of a crossing</text>
+  <text x="935" y="344" class="small">&lt;h1&gt; + short introduction</text>
+  <rect class="photo" x="935" y="363" width="380" height="189"/>
+  <path d="M935 363L1315 552M1315 363L935 552" class="line"/>
+  <text x="1125" y="469" text-anchor="middle">&lt;figure&gt; Lead photograph</text>
+  <text x="935" y="579" class="small">&lt;figcaption&gt; Photographer + location</text>
+  <text x="965" y="614" class="tag">&lt;p&gt; Original commentary (~150 words)</text>
+  <line x1="965" y1="635" x2="1270" y2="635" class="line"/>
+  <line x1="965" y1="651" x2="1270" y2="651" class="line"/>
+  <line x1="965" y1="667" x2="1230" y2="667" class="line"/>
+  <rect class="photo" x="965" y="685" width="146" height="80"/>
+  <rect class="photo" x="1124" y="685" width="146" height="80"/>
+  <text x="965" y="790" class="small">Two supporting photos + captions</text>
+  <text x="935" y="823" class="tag">&lt;a&gt; Back to atlas.html#new-york</text>
+  <line x1="920" y1="844" x2="1330" y2="844" class="rule"/>
+  <text x="935" y="872" class="tag">&lt;footer&gt; Photo credits</text>
+  <!-- Mobile is the same home page, not a fourth HTML file. -->
+  <text x="1375" y="201" class="tag">&lt;header&gt; Project name</text>
+  <text x="1375" y="229" class="small">&lt;nav&gt; Home / Album / Story</text>
+  <line x1="1360" y1="245" x2="1710" y2="245" class="rule"/>
+  <rect class="photo" x="1375" y="260" width="320" height="175"/>
+  <path d="M1375 260L1695 435M1695 260L1375 435" class="line"/>
+  <rect x="1385" y="307" width="300" height="58" fill="white" fill-opacity=".94"/>
+  <text x="1535" y="344" text-anchor="middle" class="heading">City, Remembered</text>
+  <text x="1375" y="469" class="tag">&lt;h2&gt; Explore cities</text>
+  <rect class="photo" x="1375" y="486" width="320" height="85"/>
+  <text x="1390" y="538">New York</text>
+  <rect class="photo" x="1375" y="584" width="320" height="85"/>
+  <text x="1390" y="636">Tokyo</text>
+  <rect class="photo" x="1375" y="682" width="320" height="85"/>
+  <text x="1390" y="734">Paris</text>
+  <text x="1375" y="805" class="small">Featured story continues below.</text>
+  <line x1="1360" y1="844" x2="1710" y2="844" class="rule"/>
+  <text x="1375" y="872" class="tag">&lt;footer&gt; Photo credits</text>
+  <text x="40" y="941">Desktop: city previews and album photos beside each other. Phone: stack in one column.</text>
+  <text x="40" y="979" class="small">HTML anchors link city sections. Shared navigation connects the three pages. All external photos receive credits.</text>
+  <text x="40" y="1017" class="small">Boxes mark content regions, not decorative cards. Grey photo placeholders are not final images. Layouts are schematic, not to scale.</text>
+</svg>
