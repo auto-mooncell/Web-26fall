@@ -44,13 +44,13 @@ The site built from it is in [Midterm/](Midterm/README.md).
   — works after this folder is pushed and Pages is enabled for the repository.
 - [Home](Midterm/index.html)
 - [City Album](Midterm/atlas.html): [New York](Midterm/new-york.html), [Tokyo](Midterm/tokyo.html), [Paris](Midterm/paris.html), [Shanghai](Midterm/shanghai.html)
-- [Photo Story](Midterm/story.html)
+- [Photo Stories](Midterm/story.html): [New York](Midterm/story-new-york.html), [Tokyo](Midterm/story-tokyo.html), [Paris](Midterm/story-paris.html), [Shanghai](Midterm/story-shanghai.html)
 - [Project README](Midterm/README.md)
 
 The site is a photo archive of New York, Tokyo, Paris, and Shanghai: a home
 page, an album page with landmark-icon city tiles, one page per city (all from
 the same template, each showing the city's bright side and what is behind it),
-and a photo story. It uses thirty-two credited photographs, responsive layouts,
+and four photo stories. It uses thirty-two credited photographs, responsive layouts,
 a small JavaScript slideshow, and a FormSpree contact form.
 
 ## Previous midterm study: Weekend Oven

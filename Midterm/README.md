@@ -19,7 +19,9 @@ This is the built version of the proposal in
 - City pages, all built from the same template: [New York](new-york.html), [Tokyo](tokyo.html), [Paris](paris.html), [Shanghai](shanghai.html).
   Each has "01 / The bright side" (two large photos on a dark band), "02 / Behind it" (six everyday photos),
   previous / next city links, and that city's photo credits
-- [Photo Story](story.html): a short New York photo essay
+- [Photo Stories](story.html): an index of four photo essays, one per city, all built from the same template:
+  [New York](story-new-york.html), [Tokyo](story-tokyo.html), [Paris](story-paris.html), [Shanghai](story-shanghai.html).
+  Each has four chapters (roughly 450–550 words) around five of that city's photographs, and links back to its city page
 
 ## Sitemap and wireframe
 
@@ -29,14 +31,17 @@ This is the built version of the proposal in
 
 Changes from the proposal: Shanghai was added as a fourth city, and the
 album's three in-page sections became an album page plus one page per city.
-The four city pages share one HTML template and the same CSS, so the site is
-still three kinds of page (home, album, story) rather than seven separate
-designs. Each city now has eight photos instead of three, the home page has a
+The four city pages share one HTML template, and so do the four story pages,
+so the site is still a handful of page types (home, album, city, story index,
+story) rather than eleven separate designs. Each city now has eight photos instead of three, the home page has a
 contact form, and the album has one small JavaScript slideshow.
 
 ## Course concepts used
 
 - Semantic HTML: `header`, `nav`, `main`, `section`, `article`, `figure`/`figcaption`, `footer`, and real heading levels
+- Typography from Google Fonts, set as CSS variables: Cormorant Garamond for headings, Cormorant Upright
+  (an upright calligraphic face) for the red emphasis words instead of italics, EB Garamond for story text,
+  Manrope for body and interface text, and Space Mono for small labels
 - Alt text written for what each photograph actually shows
 - CSS variables at `:root` for every colour, with a light accent for dark sections so text stays readable
 - Flexbox for the header, navigation, buttons, and captions
@@ -140,4 +145,5 @@ The site borrows these ideas, not their layouts, code, or images.
 - Confirm the photographer names for the Unsplash images marked above, and where `tokyo-curves.jpg` was taken
 - Replace more stock photos with my own photographs
 - Paris's "bright side" is romantic rather than modern; a La Défense photo could show its modern face
+- Background music for each city (researched, not added yet: most official music videos cannot be embedded on other sites)
 - Turn submitted memories into captions in the album
