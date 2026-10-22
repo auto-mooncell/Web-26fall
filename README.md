@@ -41,7 +41,6 @@ The site built from it is in [Midterm/](Midterm/README.md).
 ## Midterm: City, Remembered
 
 - Live site (GitHub Pages): https://auto-mooncell.github.io/Web-26fall/Midterm/
-  — works after this folder is pushed and Pages is enabled for the repository.
 - [Home](Midterm/index.html)
 - [City Album](Midterm/atlas.html): [New York](Midterm/new-york.html), [Tokyo](Midterm/tokyo.html), [Paris](Midterm/paris.html), [Shanghai](Midterm/shanghai.html)
 - [Photo Stories](Midterm/story.html): [New York](Midterm/story-new-york.html), [Tokyo](Midterm/story-tokyo.html), [Paris](Midterm/story-paris.html), [Shanghai](Midterm/story-shanghai.html)

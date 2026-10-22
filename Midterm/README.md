@@ -10,7 +10,6 @@ This is the built version of the proposal in
 [`Week05/city-memory/`](../Week05/city-memory/README.md).
 
 **Live site:** https://auto-mooncell.github.io/Web-26fall/Midterm/
-(available once this folder is pushed and GitHub Pages is turned on for the repository)
 
 ## Pages
 
