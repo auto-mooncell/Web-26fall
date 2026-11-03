@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random City Walk — City, Remembered</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <article class="ticket">
+      <header class="poster">
+        <p class="presents">City, Remembered presents</p>
+        <h1 class="billing" id="billing"></h1>
+        <p class="where-when" id="where-when"></p>
+      </header>
+
+      <figure class="walk-photo">
+        <img id="photo" src="" alt="" />
+        <figcaption id="photo-credit"></figcaption>
+      </figure>
+
+      <p class="status" id="status"></p>
+
+      <section class="order">
+        <h2>Your walk</h2>
+
+        <p class="line" id="summary"></p>
+        <p class="line" id="distance-line"></p>
+        <p class="line" id="time-line"></p>
+        <p class="line" id="fare-line"></p>
+        <p class="line" id="share-line"></p>
+
+        <p class="total">
+          <span>Total spend</span>
+          <strong id="total"></strong>
+        </p>
+
+        <p class="fine-print" id="fine-print"></p>
+      </section>
+
+      <section class="lineup-wrap">
+        <h2>Route</h2>
+        <ul class="lineup" id="route"></ul>
+        <p class="tagline" id="tagline"></p>
+      </section>
+    </article>
+
+    <script>
+      /* =========================================================
+         1. ARRAYS — the lists everything is picked from
+         Different lengths on purpose: .length keeps every pick valid.
+         ========================================================= */
+
+      // cities, photos and credits line up: index 0 is New York in all three
+      const cities = ['New York', 'Tokyo', 'Paris', 'Shanghai']
+      const photos = ['img/new-york.jpg', 'img/tokyo.jpg', 'img/paris.jpg', 'img/shanghai.jpg']
+      const photoAlts = [
+        'Crowds and taxis crossing Times Square under large illuminated signs',
+        'Two people walking down a tree-lined street in Tokyo',
+        'A long, nearly empty Paris street lined with stone buildings',
+        'Plane trees arching over a quiet stretch of Wukang Road in Shanghai',
+      ]
+      const photoCredits = [
+        'Photo: Aaron Sebastian / Unsplash',
+        'Photo: James Pere / Unsplash',
+        'Photo: JLPC / CC BY-SA 3.0',
+        'Photo: SSYoung / CC BY-SA 4.0',
+      ]
+
+      const stops = [
+        'a corner café',
+        'a used bookshop',
+        'a park bench',
+        'a street market',
+        'a ferry pier',
+        'a record shop',
+        'a bakery',
+        'a noodle counter',
+      ]
+
+      const weathers = ['clear', 'drizzly', 'windy', 'foggy', 'sunny']
+      const days = ['Saturday', 'Sunday', 'a weekday afternoon']
+      const accents = ['#a63b31', '#2f6f4e', '#3b4c9c', '#b4622a', '#6b3f7a']
+      const taglines = [
+        'Look closely. Keep the trace.',
+        'Walk slower than you think you should.',
+        'Every stop counts as a memory.',
+      ]
+
+      /* =========================================================
+         2. THE TWO RANDOM HELPERS FROM CLASS
+         ========================================================= */
+
+      function pickRandom(list) {
+        const index = Math.floor(Math.random() * list.length)
+        return list[index]
+      }
+
+      // a whole number from min to max, both ends included
+      function randomBetween(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+
+      /* =========================================================
+         3. THE RANDOM FACTS FOR THIS WALK
+         ========================================================= */
+
+      // one index for the city, so its photo and credit match it
+      const cityIndex = randomBetween(0, cities.length - 1)
+      const city = cities[cityIndex]
+
+      const weather = pickRandom(weathers)
+      const day = pickRandom(days)
+      const temperature = randomBetween(2, 28) // °C
+
+      const numberOfStops = randomBetween(3, 6)
+      const groupSize = randomBetween(1, 4)
+
+      // 2.0 to 9.9 km: a whole number of tenths, divided by 10
+      const distanceKm = randomBetween(20, 99) / 10
+
+      const walkingSpeedKmh = 4.5
+      const fareEachWay = 2.9 // metro there and back
+      const budgetPerPerson = 50
+
+      /* =========================================================
+         4. ARITHMETIC — everything here is worked out, not typed
+         ========================================================= */
+
+      // time on foot: distance ÷ speed gives hours, × 60 gives minutes
+      const walkingMinutes = Math.round((distanceKm / walkingSpeedKmh) * 60)
+
+      // the route is built in the loop below, which also adds up
+      // how long the stops take and how much they cost
+      const startIndex = randomBetween(0, stops.length - 1)
+      const startHour = randomBetween(10, 15)
+      const minutesPerLeg = Math.round(walkingMinutes / numberOfStops)
+
+      let stopMinutes = 0
+      let stopSpend = 0 // per person
+      let elapsed = 0
+      let routeHTML = ''
+
+      /* =========================================================
+         5. A FOR LOOP THAT BUILDS THE ROUTE
+         ========================================================= */
+
+      for (let i = 0; i < numberOfStops; i++) {
+        // (startIndex + i) % stops.length walks round the list and wraps
+        // back to the start, so no stop is ever picked twice in one walk
+        const stop = stops[(startIndex + i) % stops.length]
+
+        const minutesHere = randomBetween(10, 35)
+        const costHere = randomBetween(3, 14) + 0.5
+
+        elapsed = elapsed + minutesPerLeg
+        stopMinutes = stopMinutes + minutesHere
+        stopSpend = stopSpend + costHere
+
+        // clock time of arrival: whole hours, and the minutes left over (%)
+        const arrival = startHour * 60 + elapsed
+        const hour = Math.floor(arrival / 60)
+        const minute = arrival % 60
+        const clock = `${hour}:${minute < 10 ? '0' + minute : minute}`
+
+        // i % 2 is 0, 1, 0, 1... so every other row gets the stripe
+        const stripe = i % 2 === 0 ? 'stripe' : ''
+
+        routeHTML += `<li class="${stripe}"><span class="time">${clock}</span><span class="stop">${stop}</span><span class="cost">$${costHere.toFixed(2)}</span></li>`
+
+        elapsed = elapsed + minutesHere
+      }
+
+      const totalMinutes = walkingMinutes + stopMinutes
+      const hours = Math.floor(totalMinutes / 60)
+      const minutes = totalMinutes % 60
+
+      const fares = fareEachWay * 2
+      const spendPerPerson = stopSpend + fares
+      const groupSpend = spendPerPerson * groupSize
+
+      /* =========================================================
+         6. BOOLEANS WORKED OUT FROM COMPARISONS
+         ========================================================= */
+
+      const needsAJacket = temperature < 12
+      const isLongWalk = totalMinutes > 180
+      const isOverBudget = spendPerPerson > budgetPerPerson
+
+      /* =========================================================
+         7. CHOOSING A MESSAGE — all three can come up
+         ========================================================= */
+
+      let status
+
+      if (isOverBudget) {
+        const overBy = spendPerPerson - budgetPerPerson
+        status = `Over budget by $${overBy.toFixed(2)} — skip a stop`
+      } else if (isLongWalk) {
+        status = 'A long day — wear good shoes'
+      } else {
+        status = 'An easy afternoon'
+      }
+
+      /* =========================================================
+         8. TERNARIES — small choices that produce a value
+         ========================================================= */
+
+      const jacketNote = needsAJacket ? 'Bring a jacket.' : 'Leave the jacket at home.'
+      const peopleWord = groupSize === 1 ? 'person' : 'people'
+      const timeText = hours === 0 ? `${minutes} min` : `${hours} h ${minutes} min`
+
+      /* =========================================================
+         9. TEMPLATE LITERALS — sentences built from variables
+         ========================================================= */
+
+      const billing = `A walk in ${city}`
+      const whereWhen = `${day} · ${weather}, ${temperature}°C`
+      const summary = `${numberOfStops} stops across ${distanceKm.toFixed(1)} km of ${city}, starting at ${startHour}:00`
+      const finePrint = `${jacketNote} Budget is $${budgetPerPerson} a person; you are spending $${spendPerPerson.toFixed(2)}.`
+
+      /* =========================================================
+         10. ON THE PAGE — nothing above was typed into the HTML
+         ========================================================= */
+
+      document.querySelector('#billing').textContent = billing
+      document.querySelector('#where-when').textContent = whereWhen
+      document.querySelector('#status').textContent = status
+
+      const photo = document.querySelector('#photo')
+      photo.src = photos[cityIndex]
+      photo.alt = photoAlts[cityIndex]
+      document.querySelector('#photo-credit').textContent = photoCredits[cityIndex]
+
+      document.querySelector('#summary').textContent = summary
+      document.querySelector('#distance-line').textContent =
+        `On foot  —  ${walkingMinutes} min at ${walkingSpeedKmh} km/h`
+      document.querySelector('#time-line').textContent =
+        `Whole walk  —  ${timeText}`
+      document.querySelector('#fare-line').textContent =
+        `Metro there and back  —  $${fares.toFixed(2)} each`
+      document.querySelector('#share-line').textContent =
+        `Group of ${groupSize} ${peopleWord}  —  $${spendPerPerson.toFixed(2)} each`
+      document.querySelector('#total').textContent = `$${groupSpend.toFixed(2)}`
+      document.querySelector('#fine-print').textContent = finePrint
+
+      // innerHTML, because this string contains real <li> tags
+      document.querySelector('#route').innerHTML = routeHTML
+      document.querySelector('#tagline').textContent = pickRandom(taglines)
+
+      // one line re-themes the page: every rule using var(--accent) updates
+      document.body.style.setProperty('--accent', pickRandom(accents))
+
+      // handy while testing: what did this reload produce?
+      console.log({ city, numberOfStops, distanceKm, totalMinutes, spendPerPerson, isOverBudget, isLongWalk, needsAJacket })
+    </script>
+  </body>
+</html>

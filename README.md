@@ -62,6 +62,17 @@ a small JavaScript slideshow, and a FormSpree contact form.
 The working first version has three linked pages, shared CSS, local photographs,
 and mobile layouts. It develops the Week 5 proposal with a smaller scope.
 
+## Week 9: Random City Walk
+
+- [Random City Walk](Week09/random-walk/index.html) ·
+  [live](https://auto-mooncell.github.io/Web-26fall/Week09/random-walk/)
+- [Notes and requirement checklist](Week09/random-walk/README.md)
+
+The Thursday show-page generator, rebuilt around the midterm's four cities.
+Every reload picks a city, the weather, a group and a route, then works out the
+distance, time and spend with arrays, `Math.random()`, a `for` loop, `%`,
+booleans, `if / else if / else`, ternaries and template literals.
+
 ## Course Materials
 
 The class notes and starter files come from the instructor's course repository:
