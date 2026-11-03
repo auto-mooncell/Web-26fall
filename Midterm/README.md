@@ -90,6 +90,10 @@ All 32 photographs are by other photographers (none are mine). They were resized
 to at most 1600px and compressed to roughly 100–500 KB each. Each city page also
 lists its own credits at the bottom.
 
+**Image folder size, before and after resizing:** about 17.9 MB before
+(the first 24 photos as downloaded, 11.8 MB, plus the 8 Shanghai photos, 5.9 MB)
+and 10.7 MB after, for all 32 photos.
+
 City icons (`img/icons/`, used inline in the pages) are from
 [MingCute](https://github.com/mingcute-design/mingcute-icons), Apache License 2.0:
 `statue-of-liberty-line` (New York), `miyajima-torii-line` (Tokyo; the set has no
